@@ -6,8 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-users_attributes = [
-  { first_name: 'Paul',
+Booking.destroy_all
+Review.destroy_all
+Dispo.destroy_all
+Message.destroy_all
+User.destroy_all
+
+puts "creating users..."
+paul = User.create!({ first_name: 'Paul',
     last_name: 'LeJardinier',
     email: 'paul@lapioche.fr',
     password: 'azerty',
@@ -19,8 +25,8 @@ users_attributes = [
     skills: '',
     price: '20',
     totem_tool: 'Pioche'
-  },
-  { first_name: 'Toto',
+  })
+toto = User.create!({ first_name: 'Toto',
     last_name: 'LaBricole',
     email: 'toto@lapioche.fr',
     password: 'azerty',
@@ -32,8 +38,8 @@ users_attributes = [
     skills: '',
     price: '25',
     totem_tool: 'Arrosoir'
-  },
-  { first_name: 'Joe',
+  })
+joe = User.create!({ first_name: 'Joe',
     last_name: 'LeNoob',
     email: 'joe@lapioche.fr',
     password: 'azerty',
@@ -45,8 +51,9 @@ users_attributes = [
     skills: '',
     price: '',
     totem_tool: ''
-  },
-    { first_name: 'Denis',
+  })
+
+denis = User.create!({ first_name: 'Denis',
     last_name: 'Ledegourdi',
     email: 'denis@lapioche.fr',
     password: 'azerty',
@@ -58,8 +65,8 @@ users_attributes = [
     skills: '',
     price: '',
     totem_tool: ''
-},
-{   first_name: 'Claudine',
+})
+claudine = User.create!({ first_name: 'Claudine',
     last_name: 'Ary',
     email: 'cloclo@lapioche.fr',
     password: 'azerty',
@@ -71,30 +78,35 @@ users_attributes = [
     skills: '',
     price: '',
     totem_tool: ''
-}
-]
+})
+puts "users created!"
 
+puts "creating messages..."
 messages_attributes = [
-  { sender_id: 1,
-    receiver_id: 2,
+  { sender: denis,
+    receiver: claudine,
     content: 'Hello !',
   },
-   { sender_id: 2,
-    receiver_id: 3,
+   { sender: claudine,
+    receiver: denis,
     content: 'Bonjour !',
   },
-   { sender_id: 3,
-    receiver_id: 4,
+   { sender: toto,
+    receiver: joe,
     content: 'Coucou !',
   },
-   { sender_id: 4,
-    receiver_id: 1,
+   { sender: toto,
+    receiver: paul,
     content: 'Salut !',
   }
 ]
 
+Message.create!(messages_attributes)
+puts "messages created!"
+
+puts "creating dispos..."
 dispos_attributes = [
-  { farmer_id: 1,
+  { farmer: paul,
     monday: 'false',
     tuesday: 'false',
     wednesday: 'true',
@@ -103,7 +115,7 @@ dispos_attributes = [
     saturday: 'true',
     sunday: 'true',
   },
-{ farmer_id: 2,
+{ farmer: toto,
     monday: 'true',
     tuesday: 'true',
     wednesday: 'false',
@@ -114,62 +126,69 @@ dispos_attributes = [
   },
 ]
 
+Dispo.create!(dispos_attributes)
+puts "dispos created!"
+
+puts "creating reviews..."
 reviews_attributes = [
-  { reviewee_id: 1,
-    reviewer_id: 2,
+  { reviewee: paul,
+    reviewer: joe,
     title: 'Trop bien' ,
     content: 'Trop bien !',
     rating: 4 ,
   },
-   { reviewee_id: 3,
-    reviewer_id: 4,
+   { reviewee: toto,
+    reviewer: claudine,
     title: 'Bof' ,
     content: 'Bof !',
     rating: 2 ,
   },
-   { reviewee_id: 3,
-    reviewer_id: 2,
+   { reviewee: paul,
+    reviewer: claudine,
     title: 'Super sympa',
     content: 'Super sympa',
     rating: 3 ,
   },
-   { reviewee_id: 1,
-    reviewer_id: 4,
+   { reviewee: toto,
+    reviewer: denis,
     title: 'crado',
     content: 'Un peu crado',
     rating: 1,
   }
 ]
 
+Review.create!(reviews_attributes)
+puts "reviews created!"
+
+
+puts "creating reviews..."
+
 bookings_attributes = [
   { confirmation: 'false' ,
-    client_id: 3,
-    farmer_id: 1,
+    client: denis,
+    farmer: paul,
     duration: '' ,
     total_amount: '',
   },
    { confirmation: 'false' ,
-    client_id: 4,
-    farmer_id: 2,
+    client: claudine,
+    farmer: toto,
     duration: '' ,
     total_amount: '',
   },
    { confirmation: 'false' ,
-    client_id: 5,
-    farmer_id: 1,
+    client: joe,
+    farmer: toto,
     duration: '' ,
     total_amount: '',
   },
    { confirmation: 'false' ,
-    client_id: 2,
-    farmer_id: 1,
+    client: joe,
+    farmer: paul,
     duration: '' ,
     total_amount: '',
   }
 ]
 
-#User.create!(users_attributes)
-#Message.create!(messages_attributes)
-#Dispo.create!(dispos_attributes)
-#Review.create!(reviews_attributes)
-#Booking.create!(bookings_attributes)
+Booking.create!(bookings_attributes)
+puts "bookings created!"
