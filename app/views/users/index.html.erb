@@ -1,0 +1,11 @@
+<h1>Notre BDD</h1>
+
+<h2>Nos jardiniers</h2>
+<ul><% @farmers.each do |farmer| %>
+<li><%= farmer.first_name %></li>
+<% end %></ul>
+
+<h2>Nos utilisateurs</h2>
+<ul><% @clients.each do |client| %>
+<li><%= client.first_name %></li>
+<% end %></ul>
