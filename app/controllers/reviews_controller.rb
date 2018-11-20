@@ -26,6 +26,6 @@ class ReviewsController < ApplicationController
   end
 
   def set_reviewee
-    @reviewee = Reviewee.find(params[:reviewee_id])
+    @reviewee = Review.select(params[:reviewee_id])
   end
 end
