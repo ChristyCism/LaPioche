@@ -15,7 +15,6 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :email, presence: true
   validates :city, presence: true
-  validates :profile_picture, presence: true
   validates :bio, presence: true
   validates :farmer, presence: true
 
