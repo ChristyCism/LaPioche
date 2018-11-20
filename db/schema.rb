@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_20_151931) do
+ActiveRecord::Schema.define(version: 2018_11_20_171540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2018_11_20_151931) do
     t.string "bio"
     t.string "profile_picture"
     t.string "photos"
-    t.boolean "farmer"
+    t.boolean "isFarmer"
     t.string "skills"
     t.integer "price"
     t.string "totem_tool"

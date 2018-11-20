@@ -11,6 +11,7 @@ Review.destroy_all
 Dispo.destroy_all
 Message.destroy_all
 User.destroy_all
+Conversation.destroy_all
 
 puts "creating users..."
 paul = User.create!({ first_name: 'Paul',
@@ -21,7 +22,7 @@ paul = User.create!({ first_name: 'Paul',
     profile_picture: '',
     photos: '',
     bio: 'Aime arracher des mauvaises herbes et planter des carottes',
-    farmer: 'true',
+    isFarmer: 'true',
     skills: '',
     price: '20',
     totem_tool: 'Pioche'
@@ -34,7 +35,7 @@ toto = User.create!({ first_name: 'Toto',
     profile_picture: '',
     photos: '',
     bio: 'Aime les courgettes et répandre du fumier',
-    farmer: 'true',
+    isFarmer: 'true',
     skills: '',
     price: '25',
     totem_tool: 'Arrosoir'
@@ -47,7 +48,7 @@ joe = User.create!({ first_name: 'Joe',
     profile_picture: '',
     photos: '',
     bio: "Aime les légumes, mais j'ai pas vraiment la main verte",
-    farmer: 'false',
+    isFarmer: 'false',
     skills: '',
     price: '',
     totem_tool: ''
@@ -61,7 +62,7 @@ denis = User.create!({ first_name: 'Denis',
     profile_picture: '',
     photos: '',
     bio: "J'y connais rien, mais j'adore les courgettes",
-    farmer: 'false',
+    isFarmer: 'false',
     skills: '',
     price: '',
     totem_tool: ''
@@ -74,7 +75,7 @@ claudine = User.create!({ first_name: 'Claudine',
     profile_picture: '',
     photos: '',
     bio: "Allez les verts !",
-    farmer: 'false',
+    isFarmer: 'false',
     skills: '',
     price: '',
     totem_tool: ''
