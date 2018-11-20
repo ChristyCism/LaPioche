@@ -16,10 +16,8 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :city, presence: true
   validates :bio, presence: true
-  validates :farmer, presence: true
+  validates :isFarmer, inclusion: { in: [true, false] }
 
-
-
-  scope :farmer, -> { where(farmer: true) }
-  scope :client, -> { where(farmer: false) }
+  scope :farmer, -> { where(isFarmer: true) }
+  scope :client, -> { where(isFarmer: false) }
 end
