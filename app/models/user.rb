@@ -12,4 +12,7 @@ class User < ApplicationRecord
   has_many :messages, class_name: 'Message', foreign_key: 'receiver_id'
 
   validates :first_name, presence: true
+
+  scope :farmer, -> { where(farmer: true) }
+  scope :client, -> { where(farmer: false) }
 end
