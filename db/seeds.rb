@@ -81,28 +81,6 @@ claudine = User.create!({ first_name: 'Claudine',
 })
 puts "users created!"
 
-puts "creating messages..."
-messages_attributes = [
-  { sender: denis,
-    receiver: claudine,
-    content: 'Hello !',
-  },
-   { sender: claudine,
-    receiver: denis,
-    content: 'Bonjour !',
-  },
-   { sender: toto,
-    receiver: joe,
-    content: 'Coucou !',
-  },
-   { sender: toto,
-    receiver: paul,
-    content: 'Salut !',
-  }
-]
-
-Message.create!(messages_attributes)
-puts "messages created!"
 
 puts "creating dispos..."
 dispos_attributes = [
@@ -192,3 +170,47 @@ bookings_attributes = [
 
 Booking.create!(bookings_attributes)
 puts "bookings created!"
+
+
+puts "creating conversations..."
+conversation_attributes = [
+  { sender: denis,
+    receiver: claudine,
+  },
+   { sender: claudine,
+    receiver: denis,
+  },
+   { sender: toto,
+    receiver: joe,
+  },
+   { sender: toto,
+    receiver: paul,
+  }
+]
+
+
+Conversation.create!(conversation_attributes)
+puts "conversation created!"
+
+puts "creating messages..."
+message_attributes = [
+  { conversation_id: 1,
+    body: "Hello there how are you?",
+    # user_id: 15,
+  },
+  { conversation_id: 1,
+    body: "Hey answer mofo",
+    # user_id: 15,
+  },
+    { conversation_id: 2,
+    body: "Just trying to reach out",
+    # user_id: 14,
+  },
+    { conversation_id: 2,
+    body: "I'm here",
+    # user_id: 15,
+  }
+]
+
+Message.create!(message_attributes)
+puts "message created!"
