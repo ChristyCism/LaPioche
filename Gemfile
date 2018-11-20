@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'awesome_print'
+gem 'cloudinary'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
