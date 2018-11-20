@@ -10,4 +10,6 @@ class User < ApplicationRecord
   has_many :dispos, class_name: 'Dispo', foreign_key: 'farmer_id'
   has_many :messages, class_name: 'Message', foreign_key: 'sender_id'
   has_many :messages, class_name: 'Message', foreign_key: 'receiver_id'
+
+  validates :first_name, presence: true
 end
