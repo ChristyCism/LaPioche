@@ -1,0 +1,9 @@
+<h1>Reviews#index</h1>
+
+<ul>
+  <% @reviews.each do |review| %>
+    <li> <%= review.rating %> - <%= review.title %> <br> <%= review.content %> </li>
+  <% end %>
+</ul>
+
+<%= link_to "Ajouter une review", new_user_review_path(@reviewee)  %>

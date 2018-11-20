@@ -1,0 +1,13 @@
+<h1>Reviews#show</h1>
+
+<p>
+  <strong>Review of <%= @review.reviewee %> for <%= @review.reviewer %>:</strong>
+</p>
+<p>
+  <strong><%= review.rating %> - <%= @review.title %></strong>
+</p>
+<p>
+  <%= @review.content %>
+</p>
+
+<%= link_to "Back", user_reviews_path(@reviewee) %>
