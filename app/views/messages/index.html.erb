@@ -1,0 +1,24 @@
+<h1>Messages#index</h1>
+
+<div class="mailbox">
+<ul>
+  <% @messages.each do |message| %>
+    <li>  <%= message.sender %> <br> <%= message.content %> </li>
+  <% end %>
+</ul>
+</div>
+
+<div class="all_messages">
+  <ul class="inbox">
+    <li class="message">
+      <img src="images/gab.png" alt="gab" class="avatar">
+      <div class="name_date">
+        <h3><%= message.sender %></h3>
+        <p><%= message.timestamp.to_date  %></p>
+      </div>
+      <div class="title_content">
+        <p><%= message.content %></p>
+      </div>
+    </li>
+  </ul>
+</div>
