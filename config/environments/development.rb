@@ -60,4 +60,6 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  #ci-dessous, on a rajouté ça à la mano
+  config.action_mailer.default_url_options = { host: 'https://la-pioche.herokuapp.com' }
 end
