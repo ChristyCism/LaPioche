@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'users#search'
+  root to: 'pages#home'
 
   resources :users, only: [:index] do
     collection do
