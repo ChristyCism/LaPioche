@@ -35,22 +35,20 @@
 
     <% else %>
       <!-- Login link (when logged out) -->
-
-      <%= simple_form_for(:user, url: user_session_path) do |f| %>
-        <div class="form-inputs form-inline">
-          <%= f.input :email,
-                      required: false,
-                      autofocus: true,
-                      input_html: { autocomplete: "email" } %>
-          <%= f.input :password,
-                      required: false,
-                      input_html: { autocomplete: "current-password" } %>
-          <%= f.input :remember_me, as: :boolean %>
-          <%= f.button :submit, "Log in" %>
-        </div>
-
-      <% end %>
-
+      <div class="form-inline">
+        <%= simple_form_for(:user, url: user_session_path) do |f| %>
+            <%= f.input :email,
+                        required: false,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" } %>
+            <%= f.input :password,
+            label: 'Mot de passe',
+                        required: false,
+                        input_html: { autocomplete: "current-password" } %>
+             <%= f.input :remember_me, label: 'Se souvenir de moi', as: :boolean %>
+            <%= f.button :submit, class: "btn-primary", value: 'Se connecter' %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 

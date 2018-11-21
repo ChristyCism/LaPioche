@@ -1,0 +1,25 @@
+<div class="wrapper">
+
+  <div class="text-intro">
+    <h1>Trouvez des experts en jardinage</h1>
+    <h2>Découvrez des professionnels et des passionnés, parfaitement adaptés à tout type de travaux dans votre jadin.</h2>
+  </div>
+
+  <div class="search-form">
+    <%= form_tag do %>
+      <p><%= label_tag(:q, "Ville") %><%= text_field_tag(:q) %></p>
+      <p><%= radio_button_tag(:dispos, "Lundi") %><%= label_tag(:dispos, "Lundi") %></p>
+      <p><%= radio_button_tag(:dispos, "Mardi") %><%= label_tag(:dispos, "Mardi") %></p>
+      <p><%= radio_button_tag(:dispos, "Mercredi") %><%= label_tag(:dispos, "Mercredi") %></p>
+      <p><%= radio_button_tag(:dispos, "Jeudi") %><%= label_tag(:dispos, "Jeudi") %></p>
+      <p><%= radio_button_tag(:dispos, "Vendredi") %><%= label_tag(:dispos, "Vendredi") %></p>
+      <p><%= radio_button_tag(:dispos, "Samedi") %><%= label_tag(:dispos, "Samedi") %></p>
+      <p><%= radio_button_tag(:dispos, "Dimanche") %><%= label_tag(:dispos, "Dimanche") %></p>
+      <p><%= link_to "Lancer ma recherche", users_path, class: "btn btn-primary" %>
+        </p>
+          <% end %>
+  </div>
+
+
+
+</div>

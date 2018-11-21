@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  resources :users, only: [:index] do
+    collection do
+      get :search
+    end
+  end
+
   root to: 'pages#home'
   resources :pages, only: :index
   resources :reviews, only: [:show, :index, :new, :create]
