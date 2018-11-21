@@ -20,4 +20,7 @@ class User < ApplicationRecord
 
   scope :farmer, -> { where(isFarmer: true) }
   scope :client, -> { where(isFarmer: false) }
+
+  geocoded_by :city
+  after_validation :geocode, if: :will_save_change_to_city?
 end
