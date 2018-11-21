@@ -6,6 +6,8 @@
   background-position: center;
   color: white;
   position: relative;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 .card-user {
   position: absolute;
@@ -55,7 +57,19 @@
 }
 
 #map {
-  position: absolute;
-  top: 0;
-  right: 0;
+  width: 100%;
+  height: 100vh;
 }
+
+.results-layout {
+  display: flex;
+  align-items: stretch;
+}
+
+.map-container {
+  flex: 0 0 500px;
+  position: sticky !important;
+  height: 100vh;
+  top: 0 !important;
+  margin: 30px;
+  }
