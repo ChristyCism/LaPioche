@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  root to: 'users#search'
 
   resources :users, only: [:index] do
     collection do
@@ -7,7 +8,6 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'pages#home'
   resources :pages, only: :index do
     collection do
       get :search
