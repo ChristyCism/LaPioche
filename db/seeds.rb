@@ -190,7 +190,7 @@ conversation_attributes = [
 ]
 
 
-Conversation.create!(conversation_attributes)
+#Conversation.create!(conversation_attributes)
 puts "conversation created!"
 
 puts "creating messages..."
