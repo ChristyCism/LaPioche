@@ -47,3 +47,15 @@
 .card-link:hover {
   opacity: 0.1;
 }
+
+.results {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
