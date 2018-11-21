@@ -1,9 +1,15 @@
-<h1>Reviews#index</h1>
+<div class="wrap">
+<h1>Tous les commentaires</h1>
 
 <ul>
   <% @reviews.each do |review| %>
-    <li> <%= review.rating %> - <%= review.title %> <br> <%= review.content %> </li>
+
+    <li><strong><%= review.rating %>/5 — <%= review.title %></strong><br>
+      <%= review.content %> <br><br></li>
+
   <% end %>
+
 </ul>
 
-<%= link_to "Ajouter une review", new_review_path(@reviewee)  %>
+<%= link_to "Ajouter un commentaire", new_review_path(@reviewee)  %>
+</div>

@@ -1,25 +1,28 @@
-<h1>Conversations#index</h1>
-<p>Find me in app/views/conversations/index.html.erb</p>
+<div class="wrap">
 
+<h1>Messagerie</h1>
+
+<h3>Mes conversations récentes</h3>
 <div class="ui list">
-    <div class="item">
+    <div class="item"><ul>
       <% @conversations.each do |conversation| %>
         <% if conversation.sender_id == current_user.id || conversation.receiver_id == current_user.id %>
           <% if conversation.sender_id == current_user.id %>
-            <% receiver = User.find(conversation.receiver_id) %>
+           <% receiver = User.find(conversation.receiver_id) %>
           <% else %>
             <% receiver = User.find(conversation.sender_id) %>
           <% end %>
-          <%= link_to receiver.first_name, conversation_messages_path(conversation)%>
+          <li><%= link_to receiver.first_name, conversation_messages_path(conversation)%></li>
         <% end %>
       <% end %>
+      </ul>
     </div>
   </div>
-</div>
+
 
 
 <div class="ui segment">
-  <h3>All Users</h3>
+  <h3>Mes contacts</h3>
   <div class="ui list">
     <% @users.each do |user| %>
       <% if user.id != current_user.id %>
@@ -29,4 +32,6 @@
       <% end %>
     <% end %>
   </div>
+</div>
+
 </div>
