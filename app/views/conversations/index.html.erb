@@ -1,24 +1,32 @@
 <h1>Conversations#index</h1>
 <p>Find me in app/views/conversations/index.html.erb</p>
 
-<h1>Inbox</h1>
-<ul>
-  <% @conversations.each do |conversation| %>
-    <li>
-      <%= link_to conversation.recipient(current_user).username, conversation_messages_path(conversation) %>
-      <% if !conversation.unread_message_count(current_user).zero? %>
-        (<%= conversation.unread_message_count(current_user) %>)
+<div class="ui list">
+    <div class="item">
+      <% @conversations.each do |conversation| %>
+        <% if conversation.sender_id == current_user.id || conversation.receiver_id == current_user.id %>
+          <% if conversation.sender_id == current_user.id %>
+            <% receiver = User.find(conversation.receiver_id) %>
+          <% else %>
+            <% receiver = User.find(conversation.sender_id) %>
+          <% end %>
+          <%= link_to receiver.first_name, conversation_messages_path(conversation)%>
+        <% end %>
       <% end %>
-    </li>
-  <% end %>
-</ul>
+    </div>
+  </div>
+</div>
 
 
-
-<h2>Users</h2>
-<ul>
-  <% @users.each do |user| %>
-    <li><%= link_to user.username, conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post %></li>
-  <% end %>
-</ul>
-
+<div class="ui segment">
+  <h3>All Users</h3>
+  <div class="ui list">
+    <% @users.each do |user| %>
+      <% if user.id != current_user.id %>
+      <div class="item">
+        <%= user.first_name %> - <%= link_to 'Envoyer un message', conversations_path(sender_id: current_user.id, receiver_id: user.id), method: 'post'%>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
