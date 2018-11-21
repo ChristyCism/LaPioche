@@ -1,0 +1,34 @@
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <% @farmers.each do |farmer| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+      <div class="card-category">Popular</div>
+      <div class="card-description">
+        <h2> <%=  farmer.first_name %> <%= farmer.last_name %></h2>
+        <p>  <%= farmer.skills %></p>
+        <p>  <%= farmer.price %></p>
+      </div>
+      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+      <a class="card-link" href="#" ></a>
+    </div>
+    <% end %>
+  </div>
+
+  <div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+</div>
+
+
+
+
