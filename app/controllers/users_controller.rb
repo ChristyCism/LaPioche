@@ -8,13 +8,17 @@ class UsersController < ApplicationController
     search
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   private
 
   def search
 
     if params[:city].present?
       city = params[:city]
-      @farmers = User.near(city, 15).farmer
+      @farmers = User.near(city, 5).farmer
     else
       @farmers = User.farmer.all
     end
