@@ -8,7 +8,7 @@ if (mapElement) { // only build a map if there's a div#map to inject into
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   const map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10'
+    style: 'mapbox://styles/annabplr/cjoss562a0g1y2snvj8rsb3nn'
   });
     markers.forEach((marker) => {
     new mapboxgl.Marker()
