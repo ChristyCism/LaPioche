@@ -1,10 +1,9 @@
 class MessagesController < ApplicationController
-  before_action do
-    @conversation = Conversation.find(params[:conversation_id])
-  end
 
   def index
-    @messages = @conversation.messages
+    @sender = current_user
+    @receiver = User.find(params[:user_id])
+    @messages = Message.where(@sender && @receiver)
     if @messages.length > 10
       @over_ten = true
       @messages = @messages[-10..-1]

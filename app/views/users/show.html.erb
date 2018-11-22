@@ -12,7 +12,7 @@
 
 <ul>
 <li><%= link_to "Voir les commentaires", review_path(@user) %></li>
-<li><%= link_to "Ecrire à #{@user.first_name}", messages_path(@user) %></li>
+<li><%= link_to "Ecrire à #{@user.first_name}", conversations_user_id_path(@user) %></li>
 <li><%= link_to "Solliciter", user_bookings_path(@user) , method: :post %></li>
 </ul>
 
