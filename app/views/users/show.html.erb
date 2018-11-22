@@ -13,6 +13,6 @@ c<%= @user.price %></li>
 <ul>
 <li><%= link_to "Voir les commentaires", review_path(@user) %></li>
 <li><%= link_to "Envoyer un message", messages_path(@user) %></li>
-<li><%= link_to "Sollicter", booking_path(@user) %></li>
+<li><%= link_to "Solliciter", user_bookings_path(@user) , method: :post %></li>
 </ul>
 
