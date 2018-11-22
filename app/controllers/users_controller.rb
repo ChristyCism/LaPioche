@@ -25,5 +25,6 @@ class UsersController < ApplicationController
         lat: farmer.latitude
       }
     end
+    cookies[:date] = @date
   end
 end
