@@ -1,6 +1,8 @@
-<h2>Sign up</h2>
+<h2>S'inscrire</h2>
 
-<%= simple_form_for(:user, url: user_registration_path) do |f| %>
+<%= render 'shared/signupform' %>
+
+<!-- <%= simple_form_for(:user, url: user_registration_path) do |f| %>
   <div class="form-inputs">
     <%= f.error_notification %>
     <%= f.input :email,
@@ -19,4 +21,4 @@
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>
-<% end %>
+<% end %> -->
