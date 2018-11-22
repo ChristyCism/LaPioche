@@ -3,11 +3,12 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :users, only: [:index, :show] do
+    resources :bookings, only: [:create]
     collection do
       get :search
     end
   end
   resources :messages, only: [:index, :create]
-  resources :bookings, only: [:create, :show]
   resources :reviews, only: [:show, :index, :new, :create]
+  resources :bookings, only: [:show]
 end

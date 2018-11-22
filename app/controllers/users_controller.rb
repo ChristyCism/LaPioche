@@ -5,16 +5,20 @@ class UsersController < ApplicationController
     # display results from search method
     # else
     # display 20 last farmers
-    search
+    search_by_params
   end
 
   def show
     @user = User.find(params[:id])
   end
 
+  def search
+    ap cookies[:date]
+  end
+
   private
 
-  def search
+  def search_by_params
 
     if params[:city].present?
       city = params[:city]
@@ -29,6 +33,7 @@ class UsersController < ApplicationController
         lat: farmer.latitude
       }
     end
-    cookies[:date] = @date
+    cookies[:date] = params[:date]
+    ap cookies[:date]
   end
 end
