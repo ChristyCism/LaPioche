@@ -8,7 +8,9 @@ Rails.application.routes.draw do
       get :search
     end
   end
-  resources :messages, only: [:index, :create]
+
+  get '/conversations/user_id' => 'messages#index'
+
   resources :reviews, only: [:show, :index, :new, :create]
   resources :bookings, only: [:show]
 end
