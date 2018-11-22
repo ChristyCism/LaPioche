@@ -13,6 +13,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(user)
-    search_users_path
+    users_path
   end
 end
