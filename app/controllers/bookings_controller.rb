@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
 
   def create
     @current_user = current_user
-    @farmer = params[:id]
+    @farmer = params[farmer_id]
     @booking = Booking.new(confirmation: true, client_id: @current_user.id, farmer_id: @farmer, date: @date)
     ap @booking
     @booking.save
