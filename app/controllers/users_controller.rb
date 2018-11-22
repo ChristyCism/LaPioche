@@ -11,10 +11,12 @@ class UsersController < ApplicationController
   private
 
   def search
-    if params[:city]
-      @farmers = User.search(params[:city]).farmer
+
+    if params[:city].present?
+      city = params[:city]
+      @farmers = User.near(city, 15).farmer
     else
-      @farmers = User.farmer
+      @farmers = User.farmer.all
     end
 
     @markers = @farmers.map do |farmer|
