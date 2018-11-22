@@ -1,4 +1,5 @@
 <div class="wrapper">
+<h1>Bonjour <%= current_user.first_name %>,</h1>
 
   <div class="text-intro">
     <h2>Trouvez des experts en jardinage</h2>
@@ -8,24 +9,20 @@
   <br>
   <br>
 
-  <div class="search-form form-group">
-    <%= form_tag do %>
-      <p><%= label_tag(:q, "Ma localisation ") %><%= text_field_tag(:q) %></p>
-      <p>Je souhaite l'aide d'un jardinier :</p>
-      <p><%= radio_button_tag(:dispos, "Lundi") %><%= label_tag(:dispos, "Lundi") %></p>
-      <p><%= radio_button_tag(:dispos, "Mardi") %><%= label_tag(:dispos, "Mardi") %></p>
-      <p><%= radio_button_tag(:dispos, "Mercredi") %><%= label_tag(:dispos, "Mercredi") %></p>
-      <p><%= radio_button_tag(:dispos, "Jeudi") %><%= label_tag(:dispos, "Jeudi") %></p>
-      <p><%= radio_button_tag(:dispos, "Vendredi") %><%= label_tag(:dispos, "Vendredi") %></p>
-      <p><%= radio_button_tag(:dispos, "Samedi") %><%= label_tag(:dispos, "Samedi") %></p>
-      <p><%= radio_button_tag(:dispos, "Dimanche") %><%= label_tag(:dispos, "Dimanche") %></p>
-      <p><%= link_to "Lancer ma recherche", users_path, class: "btn btn-primary" %></p>
+  <div class="search-form">
+    <%= form_tag users_path, method: :get do %>
+      <div class="form-group">
+       <p>Où souhaitez-vous jardiner ?</p>
+       <%= text_field_tag :city, params[:city], class: "form-control", placeholder: "Ma ville" %>
+      </div>
+      <div class="form-group">
+        <p>Quand ?</p>
+        <%= date_field_tag :date, params[:date], class: "form-control", placeholder: "Ma dispo" %>
+      </div>
+        <input type='submit', value='Lancer ma recherche'>
     <% end %>
   </div>
 
 <br>
-<br>
-<br>
-
 
 </div>
