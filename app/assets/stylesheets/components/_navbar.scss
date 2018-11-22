@@ -80,6 +80,45 @@
 
 .form-inline .simple_form label {
   color: black;
-  font-size: 14px;
+  font-size: 12px;
   padding: 0 10px;
+}
+
+
+.sign-in {
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 3px;
+  border: 1px solid $green;
+  background-color: $green;
+  color: white;
+  &:hover {
+    text-decoration: none;
+    background-color: $blue;
+    color: white;
+  }
+}
+.sign-up {
+  font-size: 20px;
+  padding: 10px 15px;
+  border-radius: 3px;
+  border: 1px solid $green;
+  color: $green;
+  &:hover {
+
+    background-color: $blue;
+    color: white;
+  }
+  a:hover{
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.form-inline .form-control{
+  width: 110px;
+  height: 25px;
+  font-size: 12px;
+  padding: 5px;
+  background-color: white !important;
 }
