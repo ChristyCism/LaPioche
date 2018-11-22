@@ -7,7 +7,7 @@
       <% @farmers.each do |farmer| %>
         <div class="col-xs-12">
           <div class="card" >
-            <%= cl_image_tag(farmer.photos, height: 180, width: 300) %>
+            <%= cl_image_tag(farmer.profile_picture, height: 180, width: 300) %>
             <div class="card-description">
               <h2> <%=  farmer.first_name %> <%= farmer.last_name %></h2>
               <p>  <%= farmer.skills %></p>
@@ -36,7 +36,7 @@
 <br>
 <br>
 
-<%= link_to "Envoyer un message", conversations_path %>
+<%= link_to "Envoyer un message", messages_path %>
 
 <br>
 <br>
