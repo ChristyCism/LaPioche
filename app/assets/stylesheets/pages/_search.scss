@@ -1,7 +1,27 @@
 .wrapper {
   width: 70%;
-  margin: auto;
+  margin: 0 auto;
   text-align: center;
+  padding-bottom: 20px;
+}
+
+.wrapper .row .banner {
+  color: white;
+  text-align: center;
+  height: 30vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper .row .banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
 }
 
 .search-form {
@@ -11,6 +31,7 @@
   border: 1px solid #dbdbdb;
   background: white;
   margin-top: 50px;
+  margin-bottom: 20px;
   padding: 20px;
   border-radius: 5px;
 }
@@ -29,6 +50,44 @@
 
 .form-group {
   padding: 0px 100px;
+}
+
+.icons {
+  margin: 0 3%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  background-color: #6DB08B;
+  padding: 20px;
+    p .fas {
+      font-size: 20px;
+      color: white;
+      padding: 0 40px;
+    }
+    .top10 {
+      position:relative;
+      bottom: 10px;
+    }
+}
+
+.date {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+    .fa-calendar-alt {
+      font-size: 20px;
+      padding: 0 20px;
+    }
+}
+
+.place {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+    .fa-map-marked {
+      font-size: 20px;
+      padding: 0 20px;
+    }
 }
 
 .btn-medium {
