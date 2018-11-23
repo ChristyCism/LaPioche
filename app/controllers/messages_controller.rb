@@ -1,19 +1,10 @@
 class MessagesController < ApplicationController
 
   def index
-    @sender = current_user
+    @user1 = current_user
     @user2 = User.find(params[:user_id])
-    @messages = Message.where(@sender && @receiver)
 
-    sql = <<-SQL
-      (sender_id = :user1 && receiver_id = :user2)
-      OR (sender_id = :user2 && receiver_id = :user1)
-    SQL
-    Message.where(sql, user1: current_user.id, user2: @user2.id)
-
-
-    end
-
+    @messages = Message.between(@user1, @user2)
     @message = Message.new
   end
 
