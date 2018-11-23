@@ -28,13 +28,6 @@ ActiveRecord::Schema.define(version: 2018_11_22_132343) do
     t.index ["farmer_id"], name: "index_bookings_on_farmer_id"
   end
 
-  create_table "conversations", force: :cascade do |t|
-    t.integer "sender_id"
-    t.integer "receiver_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "dispos", force: :cascade do |t|
     t.bigint "farmer_id"
     t.boolean "monday"
@@ -51,13 +44,11 @@ ActiveRecord::Schema.define(version: 2018_11_22_132343) do
 
   create_table "messages", force: :cascade do |t|
     t.text "body"
-    t.bigint "conversation_id"
-    t.bigint "user_id"
+    t.bigint "sender_id"
+    t.bigint "receiver_id"
     t.boolean "read", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -100,8 +91,6 @@ ActiveRecord::Schema.define(version: 2018_11_22_132343) do
   add_foreign_key "bookings", "users", column: "client_id"
   add_foreign_key "bookings", "users", column: "farmer_id"
   add_foreign_key "dispos", "users", column: "farmer_id"
-  add_foreign_key "messages", "conversations"
-  add_foreign_key "messages", "users"
   add_foreign_key "reviews", "users", column: "reviewee_id"
   add_foreign_key "reviews", "users", column: "reviewer_id"
 end
