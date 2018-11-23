@@ -3,7 +3,7 @@ Review.destroy_all
 Dispo.destroy_all
 Message.destroy_all
 User.destroy_all
-Conversation.destroy_all
+#Conversation.destroy_all
 
 puts "creating users..."
 emma = User.create!({
