@@ -1,18 +1,35 @@
-<h1><%= @user.first_name %> <%= @user.last_name %></h1>
 
-<ul>
-<li><%= @user.city %></li>
-<li><%= @user.bio %></li>
-
-<li><%= @user.price %> € / jour</li>
-</ul>
-
-
-<%= cl_image_tag(@user.profile_picture, :width=>150, :height=>150, :gravity=>"face", :radius=>"max", :crop=>"fill") %>
-
-<ul>
-<li><%= link_to "Voir les commentaires", review_path(@user) %></li>
-<li><%= link_to "Ecrire à #{@user.first_name}", user_conversation_path(@user) %></li>
-<li><%= link_to "Solliciter", user_bookings_path(@user) , method: :post %></li>
-</ul>
-
+<div class="wrapper">
+  <div class="row">
+    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(89,163,122,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1523301551780-cd17359a95d0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5a762f466d084a3d105fa3fcb617dd8c&auto=format&fit=crop&w=2767&q=80');">
+    </div>
+  </div>
+  <br>
+  <div class="row user-data">
+      <div class="thumb col-xs-6">
+        <div id="thumb"><%= cl_image_tag(@user.profile_picture, format: :png, :width=>150, :height=>150, :gravity=>"face", :crop=>"thumb", :radius=>"max") %></div>
+      </div>
+      <div class="infos text-left col-xs-3">
+        <h4><strong><%= @user.first_name %> <%= @user.last_name %></strong></h4>
+        <p><strong>Ville :</strong> <%= @user.city.capitalize %></p>
+        <p><strong>Prix :</strong> <%= @user.price %> € par jour</p>
+      </div>
+      <div class="comments text-right col-xs-3"><%= link_to "Voir les commentaires", review_path(@user), class: " small btn btn-primary" %></div>
+  </div>
+    <br>
+  <div class="row">
+    <p class="small">Quelques mots sur <%= @user.first_name %> : <em>"<%= @user.bio %>"</em></p>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <div>
+        <%= link_to '<i class="fas fa-comments"></i><br><p>Lui écrire</p>'.html_safe, user_bookings_path(@user), method: :post %>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div>
+        <%= link_to '<i class="fas fa-calendar-alt"></i><br><p>Réserver</p>'.html_safe, user_bookings_path(@user), method: :post %>
+      </div>
+    </div>
+    <br>
+  </div>
