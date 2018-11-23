@@ -1,24 +1,11 @@
 class MessagesController < ApplicationController
 
   def index
-    @sender = current_user
-    @receiver = User.find(params[:user_id])
-    @messages = Message.where(@sender && @receiver)
-    if @messages.length > 10
-      @over_ten = true
-      @messages = @messages[-10..-1]
-    end
-    if params[:m]
-      @over_ten = false
-      @messages = @conversation.messages
-    end
-    if @messages.last
-      if @messages.last.user_id != current_user.id
-        @messages.last.read = true
-      end
-    end
+    @user1 = current_user
+    @user2 = User.find(params[:user_id])
 
-    @message = @conversation.messages.new
+    @messages = Message.between(@user1, @user2)
+    @message = Message.new
   end
 
   def create

@@ -8,7 +8,7 @@
     <div class="row">
       <% @farmers.each do |farmer| %>
         <div class="col-xs-12 col-sm-6">
-          <%= link_to conversations_user_id_path, class: "message" do %>
+          <%= link_to user_conversation_path(farmer), class: "message" do %>
             <i class="fas fa-comments"></i>
           <% end %>
           <%= link_to user_bookings_path(farmer.id), method: :post, class: "book" do %>

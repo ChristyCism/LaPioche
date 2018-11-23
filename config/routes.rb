@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/conversations/user_id' => 'messages#index'
+  resources :messages, only: :create
+
+  get 'conversations/:user_id', to: 'messages#index', as: :user_conversation
 
   resources :reviews, only: [:show, :index, :new, :create]
   resources :bookings, only: [:show]
