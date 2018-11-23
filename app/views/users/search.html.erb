@@ -1,12 +1,7 @@
 <div class="wrapper">
-<h1>Bonjour <%= current_user.first_name %>,</h1>
+<h2>Bonjour <%= current_user.first_name %>,</h2>
+<h2>Trouvez des experts en jardinage</h2>
 
-  <div class="text-intro">
-    <h2>Trouvez des experts en jardinage</h2>
-  </div>
-
-  <br>
-  <br>
 
   <div class="search-form">
     <%= form_tag users_path, method: :get do %>
@@ -18,7 +13,7 @@
         <p>Quand ?</p>
         <%= date_field_tag :date, cookies[:date], class: "form-control", placeholder: "Ma dispo" %>
       </div>
-        <input type='submit', value='Lancer ma recherche'>
+        <input type='submit', class='btn-medium', value='Lancer ma recherche'>
     <% end %>
   </div>
 

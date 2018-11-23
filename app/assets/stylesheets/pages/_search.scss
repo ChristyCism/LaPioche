@@ -7,12 +7,41 @@
 .search-form {
   width: 70%;
   margin: auto;
+  padding: 20px;
+  border: 1px solid #dbdbdb;
+  background: white;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .text-intro {
  width: 100%;
 }
 
-#button-search {
+h2 {
+  color: #6DB08B;
+}
 
+h1 {
+  color: #6DB08B;
+}
+
+.form-group {
+  padding: 0px 100px;
+}
+
+.btn-medium {
+  color: #6DB08B;
+  border: 1px solid #6DB08B;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+}
+
+.btn-medium:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #6DB08B;
 }
