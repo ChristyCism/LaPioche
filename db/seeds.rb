@@ -3,7 +3,6 @@ Review.destroy_all
 Dispo.destroy_all
 Message.destroy_all
 User.destroy_all
-Conversation.destroy_all
 
 puts "creating users..."
 emma = User.create!({
@@ -246,44 +245,5 @@ bookings_attributes = [
 Booking.create!(bookings_attributes)
 puts "bookings created!"
 
-puts "creating conversations..."
-conversation_attributes = [
- { sender: denis,
-  receiver: claudine,
- },
-  { sender: claudine,
-  receiver: denis,
- },
-  { sender: toto,
-  receiver: joe,
- },
-  { sender: toto,
-  receiver: paul,
- }
-]
 
-#Conversation.create!(conversation_attributes)
-puts "conversation created!"
 
-puts "creating messages..."
-message_attributes = [
- { conversation_id: 1,
-  body: "Hello there how are you?",
-  # user_id: 15,
- },
- { conversation_id: 1,
-  body: "Hey answer mofo",
-  # user_id: 15,
- },
-  { conversation_id: 2,
-  body: "Just trying to reach out",
-  # user_id: 14,
- },
-  { conversation_id: 2,
-  body: "I'm here",
-  # user_id: 15,
- }
-]
-
-# Message.create!(message_attributes)
-# puts "message created!"
