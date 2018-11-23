@@ -1,6 +1,17 @@
-<h1>Votre réservation</h1>
-<p>Super <%= current_user %>! vous allez jardiner avec <%= User.find(@booking.farmer_id) %></p>
-<p> Vous avez rendez-vous le <%= @booking.date %></p>
-<p>On vous souhaite une expérience géniale! Et pleine de découverte!</p>
 
 
+
+<div class="banner"
+style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+url('https://images.unsplash.com/photo-1474440692490-2e83ae13ba29?ixlib=rb-0.3.5&s=5ab60a0d1fc6c20c1733e288f78e65af&auto=format&fit=crop&w=1950&q=80');">
+
+
+<div class="banner-content">
+    <h1>Votre réservation</h1>
+<h2>Super <%= current_user %>! vous allez jardiner avec <%= User.find(@booking.farmer_id) %></h2>
+<h3> Vous avez rendez-vous le <strong> <%= @booking.date %></strong></h3>
+<p>On vous souhaite une expérience géniale... et pleine de découverte!</p>
+    <br>
+    <%= link_to "Accueil", root_path, class: "btn btn-primary btn-lg" %>
+  </div>
+</div>
