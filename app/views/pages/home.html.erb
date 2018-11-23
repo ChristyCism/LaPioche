@@ -1,13 +1,15 @@
 <div class="banner"
-style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%,
-rgba(0,36,61,0.6) 50%),
-url('https://images.unsplash.com/photo-1537721664796-76f77222a5d0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f49bd26bc420d57d481dff74676e94d8&auto=format&fit=crop&w=1350&q=80');">
+style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+url('https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bfcaecd3f907b444b43692e25ff77302&auto=format&fit=crop&w=1350&q=80');">
 
 
 <div class="banner-content">
-    <h1>Bienvenue sur la Pioche</h1>
-    <p>Redescendez sur terre.</p>
+    <!-- <h1>Bienvenue sur la Pioche</h1> -->
+    <h1><span id="banner-typed-text"></span></h1>
+    <br>
+    <h2>Trouvez des experts en jardinage</h2>
+    <h3>Découvrez des professionnels et des passionnés qui pourront <br>vous aider pour tout type de travaux dans votre jardin.</h3>
+    <br>
     <%= link_to "Découvrir", search_users_path, class: "btn btn-primary btn-lg" %>
   </div>
 </div>
-

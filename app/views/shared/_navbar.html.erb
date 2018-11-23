@@ -20,7 +20,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to user_path(current_user.id) do %>
                 <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
               <% end %>
             </li>
@@ -45,12 +45,13 @@
             label: 'Mot de passe',
                         required: false,
                         input_html: { autocomplete: "current-password" } %>
-             <%= f.input :remember_me, label: 'Se souvenir de moi', as: :boolean %>
-            <%= f.button :submit, class: "btn-primary", value: 'Se connecter' %>
+             <%= f.input :remember_me, label: 'Se souvenir', as: :boolean %>
+            <%= f.button :submit, class: "sign-in", value: 'Se connecter' %>
         <% end %>
       </div>
+      <br>
       <div class="sign-up">
-        <%= link_to "Sign up", new_user_registration_path  %>
+        <%= link_to "S'inscrire", new_user_registration_path  %>
       </div>
     <% end %>
   </div>
