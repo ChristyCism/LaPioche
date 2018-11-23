@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(version: 2018_11_22_132343) do
     t.index ["farmer_id"], name: "index_bookings_on_farmer_id"
   end
 
+  create_table "conversations", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "receiver_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "dispos", force: :cascade do |t|
     t.bigint "farmer_id"
     t.boolean "monday"
