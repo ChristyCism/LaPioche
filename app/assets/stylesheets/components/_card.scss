@@ -1,16 +1,20 @@
 
 .card {
-  height: 175px;
+  height: 250px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
+  border-radius: 2px;
   color: white;
   position: relative;
   margin-left: 15px;
   margin-right: 15px;
   margin-bottom: 15px;
   margin-top: 15px;
-
+  box-shadow: 1px 1px 1px #bbbec1;
+  &:hover {
+    background-color: white;
+  }
 
 }
 .card-user {
@@ -28,18 +32,28 @@
   text-transform: uppercase;
 }
 .card-description {
+  background-color: rgba(255, 255, 255, 0.5);
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  width: 100%;
+  height: 15%;
+  bottom: 0px;
+  left: 0px;
 }
-.card-description h2 {
-  font-size: 24px;
+.card h2 {
+  position: absolute;
+  bottom: 23px;
+  left: 7px;
+  font-size: 30px;
+  color: white;
 }
-.card-description p {
-  font-size: 14px;
-  opacity: 0.7;
-  font-weight: lighter;
+
+
+.card-img-top img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
+
 .card-link {
   position: absolute;
   top: 0;
@@ -60,20 +74,56 @@
   justify-content: space-between;
 }
 
+.map {
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
+}
+
 #map {
   width: 100%;
   height: 100vh;
 }
-
 .results-layout {
   display: flex;
   align-items: stretch;
 }
 
-.map-container {
-  flex: 0 0 500px;
-  position: sticky !important;
-  height: 100vh;
-  top: 0 !important;
-  margin: 30px;
+.jour {
+  font-size: 0.8em;
+}
+
+.book {
+  position: absolute;
+  top: 25px;
+  right: 75px;
+  color: white;
+  z-index: 2;
+  &:hover {
+    color: $blue;
   }
+}
+
+.price {
+  position: absolute;
+  font-size: 15px;
+  top: 27px;
+  left: 10px;
+
+}
+
+.message{
+  position: absolute;
+  color: white;
+  top: 25px;
+  right: 45px;
+  z-index: 2;
+  &:hover {
+    color: $blue;
+  }
+
+}
+
+.card p {
+  color: white;
+}
