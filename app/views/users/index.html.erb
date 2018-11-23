@@ -14,7 +14,7 @@
               <h2> <%=  farmer.first_name %> <%= farmer.last_name %></h2>
               <p>  <%= farmer.skills %></p>
               <p>  <%= farmer.price %></p>
-              <p><%= link_to '<i class="fas fa-envelope message"></i>'.html_safe, conversations_user_id_path %></p>
+              <p><%= link_to '<i class="fas fa-envelope message"></i>'.html_safe, user_conversation_path(farmer) %></p>
             </div>
             <% end %>
           </div>

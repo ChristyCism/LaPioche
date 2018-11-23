@@ -245,5 +245,27 @@ bookings_attributes = [
 Booking.create!(bookings_attributes)
 puts "bookings created!"
 
-
-
+messages_attributes = [
+{ body: "Salut Joe, savez vous planter les choux?",
+  sender: claudine,
+  receiver: joe,
+  },
+  { body: "Grave, Askip je le fais à la mode de chez vous!",
+  sender: joe,
+  receiver: claudine,
+  },{ body: "Super, merci frR!",
+  sender: claudine,
+  receiver: joe,
+  },{ body: "Bonjour Paul, j'aimerais savoir si vous pourriez m'aider à dégager les ronces autour de mon potager",
+  sender: claudine,
+  receiver: paul,
+  },{ body: "Franchement t'as vu j'ai trop aps le temps par contre t'es célib?",
+  sender: paul,
+  receiver: claudine,
+  },{ body: "Merci monsieur mais je vais chercher quelqu'un d'autre",
+  sender: claudine,
+  receiver: paul,
+  },
+]
+Message.create!(messages_attributes)
+puts "#{Message.all.count}messages created!"
