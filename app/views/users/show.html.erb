@@ -23,8 +23,10 @@
   <div class="row">
     <div class="col-xs-6">
       <div>
-        <%= link_to '<i class="fas fa-comments"></i><br><p>Lui écrire</p>'.html_safe, user_bookings_path(@user), method: :post %>
+        <%= link_to '<i class="fas fa-comments"></i><br><p>Lui écrire</p>'.html_safe, user_conversation_path(@user) %>
       </div>
+
+
     </div>
     <div class="col-xs-6">
       <div>
